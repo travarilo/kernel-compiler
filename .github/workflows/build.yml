@@ -15,8 +15,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build & Push
       run: |
-        git config --global user.name "${GITHUB_USER}"
-        git config --global user.email "${GITHUB_EMAIL}"
         source env.sh
         echo "Cloning kernel"
         git clone --depth=1 $KERNEL_SOURCE -b $KERNEL_BRANCH kernel && cd kernel
